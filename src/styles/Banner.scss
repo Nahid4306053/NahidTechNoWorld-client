@@ -1,0 +1,55 @@
+@import "App";
+.advertisment {
+
+  cursor: pointer;                  
+  position: relative;
+  .over {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    @include transition(.3s);
+  }
+  .sub_con {
+    height: 100%;
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.676);
+    @include transition(.3s);
+    @include transform-scale(0);
+  }  
+  .sub_con_2 {
+    height: 80%;
+    width: 95%;
+    background-color: wheat;
+    @include transition(.3s);
+    @include transform-scale(1.8);
+  }
+}
+
+.advertisment:hover {
+  .over {
+    opacity: 0.3;
+  }
+  .sub_con {
+    @include transform-scale(1);
+  }  .sub_con_2 {
+    @include transform-scale(0);
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: #000000af;
+  color: #ffffff !important;
+  font-size: 20px !important;
+  
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 20px;
+}
